@@ -64,13 +64,16 @@ const Header = (props) => {
     }
   }, [auth.authenticate]);
 
-  
+  // useEffect(() => {
+  //   dispatch(getCartItems());
+  // }, []);
+
   const renderLoggedInMenu = () => {
     return (
       <DropdownMenu
         menu={<a className="fullName">{auth.user.fullName}</a>}
         menus={[
-          { label: "My Profile", href: "", icon: null },
+          { label: "My Profile", href: "/account", icon: null },
 
           {
             label: "Orders",

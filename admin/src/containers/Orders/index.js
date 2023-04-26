@@ -16,10 +16,12 @@ const Orders = (props) => {
   const [type, setType] = useState("");
   const dispatch = useDispatch();
 
-  const onOrderUpdate = (orderId) => {
+  const onOrderUpdate = (orderId, user) => {
+    console.log("user", user);
     const payload = {
       orderId,
       type,
+      user,
     };
     dispatch(updateOrder(payload));
   };
@@ -128,7 +130,9 @@ const Orders = (props) => {
                 boxSizing: "border-box",
               }}
             >
-              <button onClick={() => onOrderUpdate(orderItem._id)}>
+              <button
+                onClick={() => onOrderUpdate(orderItem._id, orderItem.user)}
+              >
                 confirm
               </button>
             </div>

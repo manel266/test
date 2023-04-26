@@ -21,9 +21,9 @@ const ProductPage = (props) => {
   }, []);
 
   return (
-    <div >
+    <div style={{ margin: "0 10px", height: "0vh", border: "0px solid red" }}>
       <h3>{page.title}</h3>
-      <Carousel renderThumbs={() => {}} >
+      <Carousel renderThumbs={() => {}}>
         {page.banners &&
           page.banners.map((banner, index) => (
             <a
@@ -31,8 +31,7 @@ const ProductPage = (props) => {
               style={{ display: "block" }}
               href={banner.navigateTo}
             >
-                
-              <img src={`http://localhost:5000${banner.img}`} alt="" style={{height:'50vh'}} />
+              <img src={banner.img} alt="" />
             </a>
           ))}
       </Carousel>

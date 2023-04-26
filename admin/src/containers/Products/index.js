@@ -63,10 +63,10 @@ const Products = (props) => {
 
   const renderProducts = () => {
     return (
-      <Table style={{ fontSize: 12 }} responsive="sm">
+      <Table style={{ fontSize: 12 }} responsive="sm" className="TableProducts">
         <thead>
           <tr>
-            <th>#</th>
+            <th></th>
             <th>Name</th>
             <th>Price</th>
             <th>Quantity</th>
@@ -76,9 +76,9 @@ const Products = (props) => {
         </thead>
         <tbody>
           {product.products.length > 0
-            ? product.products.map((product) => (
+            ? product.products.map((product, index) => (
                 <tr key={product._id}>
-                  <td>2</td>
+                  <td>{index + 1}</td>
                   <td>{product.name}</td>
                   <td>{product.price}</td>
                   <td>{product.quantity}</td>
@@ -217,8 +217,7 @@ const Products = (props) => {
             <div style={{ display: "flex" }}>
               {productDetails.productPictures.map((picture) => (
                 <div className="productImgContainer">
-              <img  src={`http://localhost:5000${picture.img}`}/>
-
+                  <img src={picture.img} alt="" />
                 </div>
               ))}
             </div>
@@ -232,7 +231,13 @@ const Products = (props) => {
       <Container>
         <Row>
           <Col md={12}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                marginTop: "1%",
+              }}
+            >
               <h3>Products</h3>
               <button onClick={handleShow}>Add</button>
             </div>

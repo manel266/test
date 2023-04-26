@@ -1,4 +1,4 @@
-import { userConstants } from "../actions/constants";
+import { userConstants, userContants } from "../actions/constants";
 
 const initState = {
   address: [],
@@ -12,6 +12,12 @@ const initState = {
 
 export default (state = initState, action) => {
   switch (action.type) {
+    case userContants.GET_USER_SUCCESS:
+      state = {
+        ...state,
+        user: action.payload,
+      };
+      break;
     case userConstants.GET_USER_ADDRESS_REQUEST:
       state = {
         ...state,

@@ -6,7 +6,7 @@ import { Redirect } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signup } from "../../actions";
 import { useEffect } from "react";
-
+import loginImg from "../../icons/login.png";
 /**
  * @author
  * @function Signup
@@ -56,49 +56,107 @@ const Signup = (props) => {
     <Layout>
       <Container>
         {user.message}
-        <Row style={{ marginTop: "50px" }}>
+        <Row style={{ marginTop: "140px" }}>
           <Col md={{ span: 6, offset: 3 }}>
             <Form onSubmit={userSignup}>
-              <Row>
-                <Col md={6}>
-                  <Input
-                    label="First Name"
-                    placeholder="First Name"
-                    value={firstName}
-                    type="text"
-                    onChange={(e) => setFirstName(e.target.value)}
-                  />
-                </Col>
-                <Col md={6}>
-                  <Input
-                    label="Last Name"
-                    placeholder="Last Name"
-                    value={lastName}
-                    type="text"
-                    onChange={(e) => setLastName(e.target.value)}
-                  />
-                </Col>
-              </Row>
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label class="active">First Name</label>
+                    <Input
+                      placeholder="First Name"
+                      value={firstName}
+                      type="text"
+                      onChange={(e) => setFirstName(e.target.value)}
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label class="active">Last Name</label>
+                    <Input
+                      placeholder="Last Name"
+                      value={lastName}
+                      type="text"
+                      onChange={(e) => setLastName(e.target.value)}
+                    />
+                  </div>
+                </div>
 
-              <Input
-                label="Email"
-                placeholder="Email"
-                value={email}
-                type="email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label
+                      class="active"
+                      value={email}
+                      type="email"
+                      onChange={(e) => setEmail(e.target.value)}
+                    >
+                      e-Mail
+                    </label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      placeholder="upxlio@gmail.com"
+                    />
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                  <div class="form-group">
+                    <label class="active">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      label="Password"
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                  </div>
+                </div>
 
-              <Input
-                label="Password"
-                placeholder="Password"
-                value={password}
-                type="password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <Button variant="primary" type="submit">
-                Submit
-              </Button>
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      class="btn dark-2 btn-md full-width pop-login"
+                    >
+                      Create An Account
+                    </button>
+                  </div>
+                </div>
+              </div>
             </Form>
+            <div class="form-group text-center">
+              <span>Or Singin with</span>
+            </div>
+            <div class="social_logs mb-4">
+              <ul class="shares_jobs text-center">
+                <li>
+                  <a href="#" class="share fb">
+                    F
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="share gp">
+                    g
+                  </a>
+                </li>
+                <li>
+                  <a href="#" class="share ln">
+                    In
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-footer b-0">
+              <div class="mf-link text-center">
+                <i class="ti-user"></i>Have an account already?
+                <a href="signin" class="theme-cl">
+                  {" "}
+                  Login
+                </a>
+              </div>
+            </div>
           </Col>
         </Row>
       </Container>

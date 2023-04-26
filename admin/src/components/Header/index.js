@@ -3,7 +3,8 @@ import { Navbar, Nav, NavDropdown, Container } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { signout } from "../../actions";
-
+import "./style.css";
+import gadgets from "../../icons/gadgets.png";
 /**
  * @author
  * @function Header
@@ -21,7 +22,11 @@ const Header = (props) => {
     return (
       <Nav>
         <li className="nav-item">
-          <span className="nav-link" onClick={logout}>
+          <span
+            className="nav-link "
+            style={{ background: "black" }}
+            onClick={logout}
+          >
             Signout
           </span>
         </li>
@@ -35,12 +40,12 @@ const Header = (props) => {
         {/* <Nav.Link href="#deets">Signin</Nav.Link> */}
         <li className="nav-item">
           <NavLink to="signin" className="nav-link">
-            Signin
+            Sign-In
           </NavLink>
         </li>
         <li className="nav-item">
           <NavLink to="signup" className="nav-link">
-            Signup
+            Sign-Up
           </NavLink>
         </li>
       </Nav>
@@ -54,11 +59,12 @@ const Header = (props) => {
       expand="lg"
       bg="dark"
       variant="dark"
-      style={{ zIndex: 1 }}
+      style={{ zIndex: 1, position: "fixed" }}
     >
       <Container fluid>
         {/* <Navbar.Brand href="#home">Admin Dashboard</Navbar.Brand> */}
         <Link to="/" className="navbar-brand">
+          <img src={gadgets} alt="logo" className="gadgets" />
           Admin Dashboard
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
