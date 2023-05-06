@@ -15,7 +15,7 @@ import loginImg from "../../icons/login.png";
 const Signup = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState("charradihamdi1@gmail.com");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const auth = useSelector((state) => state.auth);
@@ -33,6 +33,7 @@ const Signup = (props) => {
 
   const userSignup = (e) => {
     e.preventDefault();
+    console.log('email',email)
 
     const user = {
       firstName,
@@ -40,6 +41,7 @@ const Signup = (props) => {
       email,
       password,
     };
+    console.log('user',user)
 
     dispatch(signup(user));
   };
