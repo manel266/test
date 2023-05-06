@@ -3,8 +3,7 @@ import axios from "../helpers/axios";
 
 export const signup = (user) => {
 
-    console.log(user)
-
+    console.log('userSigup',user)
     return async (dispatch) => {
 
         dispatch({ type: userContants.USER_REGISTER_REQUEST });

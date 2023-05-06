@@ -25,7 +25,7 @@ const Products = (props) => {
   const category = useSelector((state) => state.category);
   const product = useSelector((state) => state.product);
   const dispatch = useDispatch();
-
+  console.log('product',product)
   const handleClose = () => {
     setShow(false);
   };
@@ -217,7 +217,8 @@ const Products = (props) => {
             <div style={{ display: "flex" }}>
               {productDetails.productPictures.map((picture) => (
                 <div className="productImgContainer">
-                  <img src={picture.img} alt="" />
+                               <img  src={`http://localhost:5000${picture.img}`}/>
+
                 </div>
               ))}
             </div>

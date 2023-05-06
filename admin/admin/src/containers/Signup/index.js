@@ -7,33 +7,29 @@ import { useSelector, useDispatch } from "react-redux";
 import { signup } from "../../actions";
 import { useEffect } from "react";
 import loginImg from "../../icons/login.png";
-/**
- * @author
- * @function Signup
- **/
+
 
 const Signup = (props) => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("charradihamdi1@gmail.com");
+  const [email, setEmail] = useState("");
+  const [emailAdmin, setEmailAdmin] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const auth = useSelector((state) => state.auth);
   const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
-
+console.log(email)
   useEffect(() => {
     if (!user.loading) {
       setFirstName("");
       setLastName("");
-      setEmail("");
       setPassword("");
     }
   }, [user.loading]);
 
   const userSignup = (e) => {
     e.preventDefault();
-    console.log('email',email)
 
     const user = {
       firstName,
@@ -41,8 +37,7 @@ const Signup = (props) => {
       email,
       password,
     };
-    console.log('user',user)
-
+console.log('email',email)
     dispatch(signup(user));
   };
 
@@ -89,14 +84,15 @@ const Signup = (props) => {
                   <div class="form-group">
                     <label
                       class="active"
-                      value={email}
+                     
                       type="email"
-                      onChange={(e) => setEmail(e.target.value)}
                     >
                       e-Mail
                     </label>
                     <input
+                     value={email}
                       type="email"
+                      onChange={(e) => setEmail(e.target.value)}
                       class="form-control"
                       placeholder="upxlio@gmail.com"
                     />
