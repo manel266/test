@@ -1,11 +1,10 @@
-# Utiliser l'image de base Node.js
 FROM node:14-alpine
 
 # Définir le répertoire de travail
-WORKDIR /app
+WORKDIR /usr/src/app
 
 # Copier le package.json et le package-lock.json dans le répertoire de travail
-COPY package*.json ./
+COPY ["package.json", "package-lock.json*", "npm-shrinkwrap.json*", "./"]
 
 # Installer les dépendances
 RUN npm install
@@ -16,7 +15,7 @@ COPY . .
 # Définir les variables d'environnement pour l'application
 
 ENV NODE_ENV=production
-EXPOSE 3000
+EXPOSE 4000
 
 # Démarrer l'application
 CMD ["npm", "start"]
