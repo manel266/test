@@ -17,8 +17,6 @@ services:
     build:
       context: ./client/client
       dockerfile: Dockerfile
-    extra_hosts:
-      - "docker:20.107.210.243"
     ports:
       - 3000:3000
     volumes:

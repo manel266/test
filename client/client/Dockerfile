@@ -1,5 +1,5 @@
 FROM node:14
-
+ENV NODE_ENV=production
 # Définir le répertoire de travail
 WORKDIR /usr/src/app
 
@@ -14,7 +14,6 @@ COPY . .
 
 # Définir les variables d'environnement pour l'application
 
-ENV NODE_ENV=production
 EXPOSE 3000
 
 # Démarrer l'application
