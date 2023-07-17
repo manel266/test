@@ -17,6 +17,8 @@
   "author": "manel hkimi",
   "license": "ISC",
   "dependencies": {
+    "applicationinsights": "^2.7.0",
+    "applicationinsights-native-metrics": "^0.0.9",
     "aws-sdk": "^2.809.0",
     "bcrypt": "^5.0.0",
     "body-parser": "^1.19.0",

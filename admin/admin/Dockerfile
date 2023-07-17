@@ -1,4 +1,5 @@
 FROM node:14-alpine
+ENV NODE_ENV=production
 
 # Définir le répertoire de travail
 WORKDIR /usr/src/app
@@ -12,9 +13,6 @@ RUN npm install
 # Copier tout le reste dans le répertoire de travail
 COPY . .
 
-# Définir les variables d'environnement pour l'application
-
-ENV NODE_ENV=production
 EXPOSE 4000
 
 # Démarrer l'application

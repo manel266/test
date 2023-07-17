@@ -1,1 +1,12 @@
-{}
+{
+  "dependencies": {
+    "@microsoft/applicationinsights-react-js": "^3.4.3",
+    "@opentelemetry/api": "^1.4.1",
+    "@opentelemetry/resources": "^1.15.0",
+    "@opentelemetry/sdk-metrics": "^1.15.0",
+    "@opentelemetry/sdk-trace-base": "^1.15.0",
+    "@opentelemetry/semantic-conventions": "^1.15.0",
+    "applicationinsights": "^3.0.0-beta.7",
+    "applicationinsights-native-metrics": "^0.0.9"
+  }
+}

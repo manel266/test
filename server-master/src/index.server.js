@@ -4,7 +4,20 @@ const app = express();
 const mongoose = require("mongoose");
 const path = require("path");
 const cors = require("cors");
+const appInsights = require('applicationinsights');
 
+appInsights.setup('InstrumentationKey=245cd222-05d7-4d13-89da-3f57cc9cc19b;IngestionEndpoint=https://northeurope-2.in.applicationinsights.azure.com/;LiveEndpoint=https://northeurope.livediagnostics.monitor.azure.com') 
+    .setAutoDependencyCorrelation(true)
+    .setAutoCollectRequests(true)
+    .setAutoCollectPerformance(true, true)
+    .setAutoCollectExceptions(true)
+    .setAutoCollectDependencies(true)
+    .setAutoCollectConsole(true)
+    .setUseDiskRetryCaching(true)
+    .setSendLiveMetrics(true)
+    .setDistributedTracingMode(appInsights.DistributedTracingModes.AI)
+    .enableWebInstrumentation(true)
+    .start();
 //routes
 const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin/auth");
